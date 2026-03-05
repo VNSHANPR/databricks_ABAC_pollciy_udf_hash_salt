@@ -1,15 +1,12 @@
-# databricks_ABAC_pollciy_udf_hash_salt
+# Applying Databricks ABAC policies using Hashing for masking sensitive data
 We implement ABAC by applying a hashing policy to governed tags and using Databricks-managed secrets to hash sensitive data stored in Delta tables.
 UDF for data masking 
 
 
-
-This document presents the results of tests using custom UDFs in policies with Databricks-managed secrets for hashing and salting. We create a Databricks-managed secret scope that stores the OpenSSL‑generated keys for the hash and salt as two separate key–value pairs. These keys are then used in the policies to mask a column. Finally, we test the consistency of a join operation that uses this masked column as the join key.
-
+This guide presents the results of tests using custom UDFs in policies with Databricks-managed secrets for hashing and salting. We create a Databricks-managed secret scope that stores the OpenSSL‑generated keys for the hash and salt as two separate key–value pairs. These keys are then used in the policies to mask a column. Finally, we test the consistency of a join operation that uses this masked column as the join key.
 
 
-
-Databricks secret scope
+## Databricks secret scope
 
 2 Key values were generated on terminal using openssl : < this can be any generator >
 
